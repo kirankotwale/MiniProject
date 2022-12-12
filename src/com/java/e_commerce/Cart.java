@@ -21,7 +21,6 @@ public class Cart extends BuyPoduct {
 
 			while (rs.next()) {
 				int id = rs.getInt("id");
-
 				String price = rs.getString("price");
 				String name = rs.getString("name");
 				String quantity = rs.getString("quantity");
