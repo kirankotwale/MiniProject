@@ -27,6 +27,7 @@ public class Cart extends BuyPoduct {
 				System.out.println();
 				// print the results
 				System.out.format("%s, %s, %s, %s \n", id, price, name, quantity);
+				System.out.println("--------------------------------------------");
 
 			}
 			con.close();
@@ -43,13 +44,13 @@ public class Cart extends BuyPoduct {
 			// Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce", "root", "root");
 			java.sql.Statement st = con.createStatement();
-			ResultSet res = st.executeQuery("SELECT SUM(price) FROM addcart");
+			ResultSet res = st.executeQuery("SELECT SUM(price*quantity) FROM addcart");
 			while (res.next()) {
 				int c = res.getInt(1);
 				sum = sum + c;
 			}
 			System.out.println("Sum of All Product  = " + sum);
-
+			System.out.println("----------------------------------------------------");
 			con.close();
 			st.close();
 
@@ -59,12 +60,5 @@ public class Cart extends BuyPoduct {
 
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		getUserDetails();
-		getProductDetails();
-		getBuyDetails();
-		getCartDetails();
-		getSumOfPrice();
-		getLoginDetails();
-	}
+
 }

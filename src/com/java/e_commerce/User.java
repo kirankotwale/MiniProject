@@ -1,7 +1,6 @@
 package com.java.e_commerce;
 
 public class User {
-
 	private String userName;
 	private String password;
 	private String mailId;
@@ -10,14 +9,6 @@ public class User {
 		super();
 		this.userName = userName;
 		this.password = password;
-		this.mailId = mailId;
-	}
-
-	public String getMailId() {
-		return mailId;
-	}
-
-	public void setMailId(String mailId) {
 		this.mailId = mailId;
 	}
 
@@ -36,10 +27,18 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getMailId() {
+		return mailId;
+	}
+
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
+	}
+
 
 	@Override
 	public String toString() {
-		return "User [userName=" + userName + ", password=" + password + ", mailId=" + mailId + "]";
+		return "User [userName="+ userName + ", password=" + password + ", mailId=" + mailId + "]";
 	}
 
 }
